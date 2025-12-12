@@ -210,6 +210,11 @@ public class FirstPersonController : MonoBehaviour
         sprintSpeed = newSprintSpeed;
     }
 
+    public void enableJumping()
+    {
+        enableJump = true;
+    }
+
 float camRotation;
 
     private void Update()

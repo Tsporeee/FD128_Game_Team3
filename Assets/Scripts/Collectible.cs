@@ -3,7 +3,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour 
 {
     public bool isCollected = false;
-    //public string collectableType;
+    private Vector3 rotationSpeed = new Vector3(0, 100, 0);
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +14,15 @@ public class Collectible : MonoBehaviour
             isCollected = true;
 
             Destroy(this.gameObject);
+        }
+    }
+
+    //Rotation
+    private void Update()
+    {
+        if(isCollected == false)
+        {
+            transform.Rotate(rotationSpeed * Time.deltaTime);
         }
     }
 
